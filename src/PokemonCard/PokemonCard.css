@@ -1,0 +1,73 @@
+.main {
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  background-color: #ddd;
+  line-height: 1.5;
+}
+
+.container {
+  margin: 0 auto;
+  border: 5px solid black;
+  width: 350px;
+}
+
+header {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 50px 20px;
+}
+
+.type {
+  padding-left: 5px;
+}
+
+.size {
+  border: 3px solid black;
+  padding-left: 5px;
+  margin-bottom: 20px;
+}
+
+.description {
+  border: 3px solid black;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.description span {
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 0.75rem;
+  }
+
+  section {
+    font-size: 0.75rem;
+    min-height: 100px;
+  }
+
+  .container {
+    width: 75%;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 25px 10px;
+  }
+
+  .description span {
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 240px) {
+  body {
+    font-size: 0.65rem;
+  }
+}

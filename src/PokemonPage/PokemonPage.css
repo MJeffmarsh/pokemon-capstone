@@ -1,0 +1,87 @@
+.main {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+header {
+  padding: 45px 15px;
+}
+
+section {
+  min-height: 150px;
+  padding: 30px 15px;
+  background-color: #bbb;
+}
+
+section:nth-child(even) {
+  background-color: #ddd;
+}
+
+button {
+  font-size: 25px;
+  border: none;
+  background: #444;
+  color: white;
+  height: 50px;
+  width: 20%;
+}
+
+.custom_list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.poke_info {
+  border: solid 3px black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.poke-info ul {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 0.75rem;
+  }
+
+  nav {
+    font-size: 0.85rem;
+  }
+
+  button {
+    width: 30%;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .main {
+    font-size: 0.75rem;
+  }
+
+  section {
+    min-height: 100px;
+  }
+}
+
+@media only screen and (max-width: 240px) {
+  button {
+    width: 40%;
+    font-size: 10px;
+  }
+  .main {
+    font-size: 0.65rem;
+  }
+}

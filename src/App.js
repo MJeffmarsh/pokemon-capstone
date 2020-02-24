@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './Home/Home';
+import Nav from './Nav/Nav';
+import STORE from './store';
+import AppContext from './Context';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      teams: [],
+      pokemon: [],
+      addTeam: team => {
+        this.setState({ teams: [...this.state.teams, team] });
+      }
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ teams: [...STORE.teams], pokemon: [...STORE.pokemon] });
+  }
+
+  render() {
+    return (
+      <AppContext.Provider value={this.state}>
+        <Router>
+          <main className='App'>
+            <Route exact path='/' component={Home} />
+          </main>
+        </Router>
+      </AppContext.Provider>
+    );
+  }
 }
 
 export default App;

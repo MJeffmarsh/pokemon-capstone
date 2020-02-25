@@ -9,7 +9,16 @@ export class BuildTeam extends Component {
     this.props.history.push('/teams');
   };
 
-  handleSubmit = e => {};
+  handleSubmit = e => {
+    e.preventDefault();
+    const {name, slots} = e.target;
+    const team = {
+      name: name.value,
+      slots:
+    }
+    
+
+  };
 
   render() {
     const { pokemon } = this.context;
@@ -17,7 +26,7 @@ export class BuildTeam extends Component {
       <div className='main'>
         <section>
           <h2>Build a team!</h2>
-          <form>
+          <form className='team-form'>
             <div className='custom-input'>
               <label hmtlfor='name'>Name</label>
               <input
@@ -30,13 +39,13 @@ export class BuildTeam extends Component {
             </div>
 
             <div className='custom-input'>
-              <select required>
+              <select name='pokemon-1' required>
                 {pokemon.map(pokemon => (
                   <option value={pokemon.name}>{pokemon.name}</option>
                 ))}
               </select>
 
-              <select>
+              <select name='pokemon-2'>
                 <option disabled selected value>
                   {' '}
                   -- Slot 2 --{' '}
@@ -46,7 +55,7 @@ export class BuildTeam extends Component {
                 ))}
               </select>
 
-              <select>
+              <select name='pokemon-3'>
                 <option disabled selected value>
                   {' '}
                   -- Slot 3 --{' '}
@@ -56,7 +65,7 @@ export class BuildTeam extends Component {
                 ))}
               </select>
 
-              <select>
+              <select name='pokemon-4'>
                 <option disabled selected value>
                   {' '}
                   -- Slot 4 --{' '}
@@ -66,7 +75,7 @@ export class BuildTeam extends Component {
                 ))}
               </select>
 
-              <select>
+              <select name='pokemon-5'>
                 <option disabled selected value>
                   {' '}
                   -- Slot 5 --{' '}
@@ -76,7 +85,7 @@ export class BuildTeam extends Component {
                 ))}
               </select>
 
-              <select>
+              <select name='pokemon-6'>
                 <option disabled selected value>
                   {' '}
                   -- Slot 6 --{' '}

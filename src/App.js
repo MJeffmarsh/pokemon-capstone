@@ -18,6 +18,7 @@ class App extends Component {
     this.state = {
       teams: [],
       pokemon: [],
+      types: [],
       addTeam: team => {
         this.setState({ teams: [...this.state.teams, team] });
       },
@@ -28,7 +29,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ teams: [...STORE.teams], pokemon: [...STORE.pokemon] });
+    this.setState({
+      teams: [...STORE.teams],
+      pokemon: [...STORE.pokemon],
+      types: [...STORE.types]
+    });
   }
 
   render() {

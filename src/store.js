@@ -91,5 +91,80 @@ export default {
       name: 'Team Yell',
       slots: ['Pokemon 1', 'Pokemon 6']
     }
+  ],
+
+  types: [
+    {
+      id: 1,
+      name: 'Bug'
+    },
+    {
+      id: 2,
+      name: 'Dark'
+    },
+    {
+      id: 3,
+      name: 'Dragon'
+    },
+    {
+      id: 4,
+      name: 'Electric'
+    },
+    {
+      id: 5,
+      name: 'Fairy'
+    },
+    {
+      id: 6,
+      name: 'Fighting'
+    },
+    {
+      id: 7,
+      name: 'Fire'
+    },
+    {
+      id: 8,
+      name: 'Flying'
+    },
+    {
+      id: 9,
+      name: 'Ghost'
+    },
+    {
+      id: 10,
+      name: 'Grass'
+    },
+    {
+      id: 11,
+      name: 'Ground'
+    },
+    {
+      id: 12,
+      name: 'Ice'
+    },
+    {
+      id: 13,
+      name: 'Normal'
+    },
+    {
+      id: 14,
+      name: 'Poison'
+    },
+    {
+      id: 15,
+      name: 'Psychic'
+    },
+    {
+      id: 16,
+      name: 'Rock'
+    },
+    {
+      id: 17,
+      name: 'Steel'
+    },
+    {
+      id: 18,
+      name: 'Water'
+    }
   ]
 };

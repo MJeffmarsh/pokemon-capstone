@@ -1,15 +1,16 @@
-.main {
+.create-main {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   background-color: #bbb;
   color: #444;
   line-height: 1.5;
+  text-align: left;
 }
 
 .custom-form {
   display: flex;
   flex-direction: column;
-  color: red;
+
   padding-left: 5px;
 }
 

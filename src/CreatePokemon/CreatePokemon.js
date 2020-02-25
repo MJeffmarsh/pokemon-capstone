@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CreatePokemon.css';
 
 export class CreatePokemon extends Component {
   render() {
@@ -7,7 +8,7 @@ export class CreatePokemon extends Component {
         <section>
           <h2>Create a custom Pokemon!</h2>
           <form>
-            <div class='custom-input'>
+            <div className='custom-input'>
               <label for='name'>Name</label>
               <input
                 type='text'
@@ -18,7 +19,7 @@ export class CreatePokemon extends Component {
               />
             </div>
 
-            <div class='custom-input'>
+            <div className='custom-input'>
               <label for='type'>Type</label>
               <div class='type'>
                 <select name='type' id='type' required></select>
@@ -27,7 +28,7 @@ export class CreatePokemon extends Component {
               </div>
             </div>
 
-            <div class='custom-input '>
+            <div className='custom-input '>
               <label for='height'>Height</label>
               <div class='height'>
                 <input
@@ -49,7 +50,7 @@ export class CreatePokemon extends Component {
               </div>
             </div>
 
-            <div class='custom-input'>
+            <div className='custom-input'>
               <label for='weight'>Weight</label>
               <div class='weight'>
                 <input type='text' name='weight' id='weight' maxlength='5' />
@@ -57,7 +58,7 @@ export class CreatePokemon extends Component {
               </div>
             </div>
 
-            <div class='custom-input'>
+            <div className='custom-input'>
               <label for='classification'>Classification</label>
               <input
                 type='text'
@@ -68,7 +69,7 @@ export class CreatePokemon extends Component {
               />
             </div>
 
-            <div class='custom-input'>
+            <div className='custom-input'>
               <label for='content'>Description</label>
               <textarea name='content' id='content' maxlength='250' />
             </div>

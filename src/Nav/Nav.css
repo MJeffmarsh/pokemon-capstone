@@ -1,6 +1,38 @@
+.navMain {
+  padding: 1% 0;
+  background-color: #757575;
+  font-size: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
 ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
+
   padding: 0 2px;
+}
+
+li {
+  padding: 0px 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .navMain {
+    font-size: 0.85rem;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 240px) {
+  .navMain {
+    font-size: 0.75rem;
+  }
 }

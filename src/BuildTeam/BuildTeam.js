@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './BuildTeam.css';
+import AppContext from '../Context';
 
 export class BuildTeam extends Component {
+  static contextType = AppContext;
   render() {
     return (
       <div className='main'>
@@ -9,12 +11,12 @@ export class BuildTeam extends Component {
           <h2>Build a team!</h2>
           <form>
             <div className='custom-input'>
-              <label for='name'>Name</label>
+              <label hmtlfor='name'>Name</label>
               <input
                 type='text'
                 name='name'
                 id='name'
-                maxlength='20'
+                maxLength='20'
                 required
               />
             </div>

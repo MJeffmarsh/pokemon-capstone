@@ -27,9 +27,13 @@ export class Teams extends Component {
             <div className='team_list'>
               {teams.map(team => (
                 <div className='team'>
+                  <div>{team.name}</div>
                   <ul>
-                    <li>{team.name}</li>
-                    <li>{team.slots}</li>
+                    {team.slots.map((slot, key) => (
+                      <React.Fragment key={key}>
+                        <li>{slot}</li>
+                      </React.Fragment>
+                    ))}
                   </ul>
                 </div>
               ))}

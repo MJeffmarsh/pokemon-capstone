@@ -4,7 +4,15 @@ import AppContext from '../Context';
 
 export class BuildTeam extends Component {
   static contextType = AppContext;
+
+  handleCancel = () => {
+    this.props.history.push('/teams');
+  };
+
+  handleSubmit = e => {};
+
   render() {
+    const { pokemon } = this.context;
     return (
       <div className='main'>
         <section>
@@ -23,66 +31,66 @@ export class BuildTeam extends Component {
 
             <div className='custom-input'>
               <select required>
-                <option value='pokemon1'>Pokemon 1</option>
-                <option value='pokemon2'>Pokemon 2</option>
-                <option value='pokemon3'>Pokemon 3</option>
-                <option value='pokemon4'>Pokemon 4</option>
-                <option value='pokemon5'>Pokemon 5</option>
-                <option value='pokemon6'>Pokemon 6</option>
+                {pokemon.map(pokemon => (
+                  <option value={pokemon.name}>{pokemon.name}</option>
+                ))}
               </select>
 
               <select>
-                <option value='empty'>Empty</option>
-                <option value='pokemon1'>Pokemon 1</option>
-                <option value='pokemon2'>Pokemon 2</option>
-                <option value='pokemon3'>Pokemon 3</option>
-                <option value='pokemon4'>Pokemon 4</option>
-                <option value='pokemon5'>Pokemon 5</option>
-                <option value='pokemon6'>Pokemon 6</option>
+                <option disabled selected value>
+                  {' '}
+                  -- Slot 2 --{' '}
+                </option>
+                {pokemon.map(pokemon => (
+                  <option value={pokemon.name}>{pokemon.name}</option>
+                ))}
               </select>
 
               <select>
-                <option value='empty'>Empty</option>
-                <option value='pokemon1'>Pokemon 1</option>
-                <option value='pokemon2'>Pokemon 2</option>
-                <option value='pokemon3'>Pokemon 3</option>
-                <option value='pokemon4'>Pokemon 4</option>
-                <option value='pokemon5'>Pokemon 5</option>
-                <option value='pokemon6'>Pokemon 6</option>
+                <option disabled selected value>
+                  {' '}
+                  -- Slot 3 --{' '}
+                </option>
+                {pokemon.map(pokemon => (
+                  <option value={pokemon.name}>{pokemon.name}</option>
+                ))}
               </select>
 
               <select>
-                <option value='empty'>Empty</option>
-                <option value='pokemon1'>Pokemon 1</option>
-                <option value='pokemon2'>Pokemon 2</option>
-                <option value='pokemon3'>Pokemon 3</option>
-                <option value='pokemon4'>Pokemon 4</option>
-                <option value='pokemon5'>Pokemon 5</option>
-                <option value='pokemon6'>Pokemon 6</option>
+                <option disabled selected value>
+                  {' '}
+                  -- Slot 4 --{' '}
+                </option>
+                {pokemon.map(pokemon => (
+                  <option value={pokemon.name}>{pokemon.name}</option>
+                ))}
               </select>
 
               <select>
-                <option value='empty'>Empty</option>
-                <option value='pokemon1'>Pokemon 1</option>
-                <option value='pokemon2'>Pokemon 2</option>
-                <option value='pokemon3'>Pokemon 3</option>
-                <option value='pokemon4'>Pokemon 4</option>
-                <option value='pokemon5'>Pokemon 5</option>
-                <option value='pokemon6'>Pokemon 6</option>
+                <option disabled selected value>
+                  {' '}
+                  -- Slot 5 --{' '}
+                </option>
+                {pokemon.map(pokemon => (
+                  <option value={pokemon.name}>{pokemon.name}</option>
+                ))}
               </select>
 
               <select>
-                <option value='empty'>Empty</option>
-                <option value='pokemon1'>Pokemon 1</option>
-                <option value='pokemon2'>Pokemon 2</option>
-                <option value='pokemon3'>Pokemon 3</option>
-                <option value='pokemon4'>Pokemon 4</option>
-                <option value='pokemon5'>Pokemon 5</option>
-                <option value='pokemon6'>Pokemon 6</option>
+                <option disabled selected value>
+                  {' '}
+                  -- Slot 6 --{' '}
+                </option>
+                {pokemon.map(pokemon => (
+                  <option value={pokemon.name}>{pokemon.name}</option>
+                ))}
               </select>
             </div>
-            <button>Create</button>
-            <button>Cancel</button>
+
+            <button type='submit'>Create</button>
+            <button type='button' onClick={this.handleCancel}>
+              Cancel
+            </button>
           </form>
         </section>
       </div>

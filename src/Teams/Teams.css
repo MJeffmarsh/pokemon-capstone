@@ -43,7 +43,7 @@ button {
 
 .team {
   border: solid 3px black;
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
   width: 200px;
   height: 270px;
@@ -51,10 +51,7 @@ button {
 }
 
 .team ul {
-}
-
-.team li {
-  border: 1px solid red;
+  display: inline;
 }
 
 @media only screen and (max-width: 480px) {
@@ -83,7 +80,7 @@ button {
   }
 
   .team {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     max-height: 175px;
     max-width: 150px;
   }

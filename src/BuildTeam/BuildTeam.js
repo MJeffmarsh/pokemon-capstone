@@ -11,13 +11,17 @@ export class BuildTeam extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const {name, slots} = e.target;
+    const { addTeam } = this.context;
+    const { name } = e.target;
+    const { slots } = [0, 1, 2, 3, 4, 5].forEach(
+      i => e.target[`pokemon-${i}`].value
+    );
     const team = {
       name: name.value,
-      slots:
-    }
-    
+      slots: slots.value
+    };
 
+    addTeam(team);
   };
 
   render() {
@@ -26,7 +30,7 @@ export class BuildTeam extends Component {
       <div className='main'>
         <section>
           <h2>Build a team!</h2>
-          <form className='team-form'>
+          <form className='team-form' onSubmit={this.handleSubmit}>
             <div className='custom-input'>
               <label hmtlfor='name'>Name</label>
               <input

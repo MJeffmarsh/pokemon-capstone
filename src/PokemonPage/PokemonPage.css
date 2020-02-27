@@ -36,7 +36,7 @@ button {
   padding-left: 0;
 }
 
-.poke_info {
+.pokemon_info {
   border: solid 3px black;
   display: flex;
   flex-flow: row wrap;
@@ -45,25 +45,12 @@ button {
   margin-bottom: 5px;
   padding-right: 40px;
   box-sizing: border-box;
+  width: 200px;
 }
 
-.poke-info ul {
+.pokemon_info ul {
+  display: flex;
   margin: 0 auto;
-}
-
-@media only screen and (max-width: 480px) {
-  body {
-    font-size: 0.75rem;
-  }
-
-  nav {
-    font-size: 0.85rem;
-  }
-
-  button {
-    width: 30%;
-    font-size: 15px;
-  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -74,6 +61,11 @@ button {
   section {
     min-height: 100px;
   }
+
+  button {
+    width: 30%;
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width: 240px) {
@@ -83,5 +75,9 @@ button {
   }
   .main {
     font-size: 0.65rem;
+  }
+
+  .pokemon_info {
+    min-height: 50px;
   }
 }

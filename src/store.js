@@ -23,7 +23,7 @@ export default {
     {
       id: 3,
       name: 'Pokemon 3',
-      type: ['Normal'],
+      type: ['Normal', 'Fire'],
       heightFt: 7,
       heightIn: 3,
       weight: 120,
@@ -33,7 +33,7 @@ export default {
     {
       id: 4,
       name: 'Pokemon 4',
-      type: ['Dark'],
+      type: ['Dark', 'Fighting'],
       heightFt: 5,
       heightIn: 11,
       weight: 400,
@@ -53,7 +53,7 @@ export default {
     {
       id: 6,
       name: 'Pokemon 6',
-      type: ['Poison'],
+      type: ['Poison', 'Electric'],
       heightFt: 1,
       heightIn: 11,
       weight: 2,

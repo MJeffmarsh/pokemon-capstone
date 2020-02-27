@@ -25,12 +25,12 @@ export class Teams extends Component {
           <section>
             <h2>Team List</h2>
             <div className='team_list'>
-              {teams.map(team => (
-                <div className='team'>
+              {teams.map((team, i) => (
+                <div key={`teamindex-${i}-${team.name}`} className='team'>
                   <div>{team.name}</div>
                   <ul>
-                    {team.slots.map((slot, key) => (
-                      <React.Fragment key={key}>
+                    {team.slots.map((slot, j) => (
+                      <React.Fragment key={`slotindex-${j}-${team.name}`}>
                         <li>{slot}</li>
                       </React.Fragment>
                     ))}

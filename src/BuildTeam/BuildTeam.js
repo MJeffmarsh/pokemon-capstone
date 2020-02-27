@@ -20,9 +20,9 @@ export class BuildTeam extends Component {
       slots: slots
     };
 
-    console.log(team);
-
     addTeam(team);
+
+    this.props.history.push('/teams');
   };
 
   render() {
@@ -46,42 +46,69 @@ export class BuildTeam extends Component {
             <div className='custom-input'>
               <select name='pokemon-1' required>
                 {pokemon.map(pokemon => (
-                  <option value={pokemon.name}>{pokemon.name}</option>
+                  <option key={pokemon.id + '1'} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
                 ))}
               </select>
 
               <select defaultValue='' name='pokemon-2'>
-                <option value=''> -- Slot 2 -- </option>
+                <option key={'option1'} value=''>
+                  {' '}
+                  -- Slot 2 --{' '}
+                </option>
                 {pokemon.map(pokemon => (
-                  <option value={pokemon.name}>{pokemon.name}</option>
+                  <option key={pokemon.id + '2'} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
                 ))}
               </select>
 
               <select defaultValue='' name='pokemon-3'>
-                <option value=''> -- Slot 3 -- </option>
+                <option key={'option3'} value=''>
+                  {' '}
+                  -- Slot 3 --{' '}
+                </option>
                 {pokemon.map(pokemon => (
-                  <option value={pokemon.name}>{pokemon.name}</option>
+                  <option key={pokemon.id + '3'} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
                 ))}
               </select>
 
               <select defaultValue='' name='pokemon-4'>
-                <option value=''> -- Slot 4 -- </option>
+                <option key={'option4'} value=''>
+                  {' '}
+                  -- Slot 4 --{' '}
+                </option>
                 {pokemon.map(pokemon => (
-                  <option value={pokemon.name}>{pokemon.name}</option>
+                  <option key={pokemon.id + '4'} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
                 ))}
               </select>
 
               <select defaultValue='' name='pokemon-5'>
-                <option value=''> -- Slot 5 -- </option>
+                <option key={'option5'} value=''>
+                  {' '}
+                  -- Slot 5 --{' '}
+                </option>
                 {pokemon.map(pokemon => (
-                  <option value={pokemon.name}>{pokemon.name}</option>
+                  <option key={pokemon.id + '5'} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
                 ))}
               </select>
 
               <select defaultValue='' name='pokemon-6'>
-                <option value=''> -- Slot 6 -- </option>
+                <option key={'option6'} value=''>
+                  {' '}
+                  -- Slot 6 --{' '}
+                </option>
                 {pokemon.map(pokemon => (
-                  <option value={pokemon.name}>{pokemon.name}</option>
+                  <option key={pokemon.id + '6'} value={pokemon.name}>
+                    {pokemon.name}
+                  </option>
                 ))}
               </select>
             </div>

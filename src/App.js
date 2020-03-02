@@ -46,7 +46,11 @@ class App extends Component {
             <Route path='/teams' component={Teams} />
             <Route path='/create-pokemon' component={CreatePokemon} />
             <Route path='/build-team' component={BuildTeam} />
-            <Route path='/pokemon-card' component={PokemonCard} />
+            <Route
+              path='/pokemon-card/:pokemonName'
+              {...this.props}
+              component={PokemonCard}
+            />
           </main>
         </Router>
       </AppContext.Provider>

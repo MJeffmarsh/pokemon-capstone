@@ -9,61 +9,92 @@ export class CreatePokemon extends Component {
     this.props.history.push('/pokemon');
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    const { addPokemon } = this.context;
+    const {
+      name,
+      heightFt,
+      heightIn,
+      weight,
+      classification,
+      description
+    } = e.target;
+    const type = [1, 2].map(i => e.target[`type-${i}`].value);
+
+    const pokemon = {
+      name: name.value,
+      heightFt: heightFt.value,
+      heightIn: heightIn.value,
+      weight: weight.value,
+      classification: classification.value,
+      description: description.value,
+      type: type
+    };
+
+    addPokemon(pokemon);
+
+    this.props.history.push('/pokemon');
+  };
+
   render() {
     const { types } = this.context;
     return (
       <div className='create-main'>
         <section>
           <h2>Create a custom Pokemon!</h2>
-          <form className='custom-form'>
+          <form onSubmit={this.handleSubmit} className='custom-form'>
             <div className='custom-input'>
-              <label for='name'>Name</label>
+              <label htmlFor='name'>Name</label>
               <input
                 type='text'
                 name='name'
                 id='name'
-                maxlength='15'
+                maxLength='15'
                 required
               />
             </div>
 
             <div className='custom-input'>
-              <label htmlfor='type'>Type</label>
+              <label htmlFor='type'>Type</label>
               <div className='type'>
-                <select name='type1' id='type' required>
+                <select name='type-1' id='type-1' required>
                   {types.map(types => (
-                    <option value={types.id}>{types.name}</option>
+                    <option key={types.name + '1'} value={types.name}>
+                      {types.name}
+                    </option>
                   ))}
                 </select>
 
-                <select name='type2' id='type'>
-                  <option disabled selected value>
-                    {' '}
-                    -- Type 2 Optional --{' '}
-                  </option>
+                <select defaultValue='' name='type-2' id='type-2'>
+                  <option value=''> -- Type 2 Optional -- </option>
                   {types.map(types => (
-                    <option value={types.id}>{types.name}</option>
+                    <option key={types.name + '2'} value={types.name}>
+                      {types.name}
+                    </option>
                   ))}
                 </select>
               </div>
             </div>
 
             <div className='custom-input '>
-              <label htmlfor='height'>Height</label>
-              <div class='height'>
+              <label htmlFor='height'>Height</label>
+              <div className='height'>
                 <input
                   type='text'
-                  name='height'
-                  id='height'
-                  maxlength='3'
+                  name='heightFt'
+                  id='heightFt'
+                  maxLength={4}
+                  max={9999}
                   required
                 />
                 <span>ft</span>
                 <input
                   type='text'
-                  name='height'
-                  id='height'
-                  maxlength='2'
+                  name='heightIn'
+                  id='heightIn'
+                  max={11}
+                  maxLength={2}
                   required
                 />
                 <span>in</span>
@@ -71,30 +102,30 @@ export class CreatePokemon extends Component {
             </div>
 
             <div className='custom-input'>
-              <label htmlfor='weight'>Weight</label>
-              <div class='weight'>
-                <input type='text' name='weight' id='weight' maxlength='5' />
+              <label htmlFor='weight'>Weight</label>
+              <div className='weight'>
+                <input type='text' name='weight' id='weight' maxLength='5' />
                 <span>lbs</span>
               </div>
             </div>
 
             <div className='custom-input'>
-              <label htmlfor='classification'>Classification</label>
+              <label htmlFor='classification'>Classification</label>
               <input
                 type='text'
                 name='classification'
                 id='classification'
-                maxlength='25'
+                maxLength='25'
                 required
               />
             </div>
 
             <div className='custom-input'>
-              <label htmlfor='content'>Description</label>
-              <textarea name='content' id='content' maxlength='250' />
+              <label htmlFor='description'>Description</label>
+              <textarea name='description' id='description' maxLength='250' />
             </div>
 
-            <button>Create</button>
+            <button type='submit'>Create</button>
             <button type='button' onClick={this.handleCancel}>
               Cancel
             </button>

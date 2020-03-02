@@ -2,7 +2,7 @@ export default {
   pokemon: [
     {
       id: 1,
-      name: 'Pokemon 1',
+      name: 'aaaaaaaaaaaaaaa',
       type: ['Normal'],
       heightFt: 12,
       heightIn: 3,

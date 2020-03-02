@@ -42,7 +42,7 @@ header {
 }
 
 @media only screen and (max-width: 480px) {
-  body {
+  .main {
     font-size: 0.75rem;
   }
 
@@ -67,7 +67,7 @@ header {
 }
 
 @media only screen and (max-width: 240px) {
-  body {
+  .main {
     font-size: 0.65rem;
   }
 }

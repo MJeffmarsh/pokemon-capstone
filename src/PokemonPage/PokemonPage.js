@@ -26,14 +26,18 @@ class PokemonPage extends Component {
             <div className='custom_list'>
               {pokemon.map((mon, i) => (
                 <div
-                  key={`pokemonindex-${i}-name${mon.name}`}
+                  key={`pokemonindex-${i}-name${mon.name + mon.classification}`}
                   className='pokemon_info'
                 >
                   <ul>
-                    <li>{mon.name}</li>
+                    <li>
+                      <Link to={`/pokemon-card/${mon.name}`}>
+                        <span>{mon.name}</span>
+                      </Link>
+                    </li>
                     <li>
                       {mon.type.map((types, j) => (
-                        <span key={`pokemon-${mon.id}-monindex-${j}`}>
+                        <span key={`pokemon-${mon.name}-monindex-${j}`}>
                           {types}{' '}
                         </span>
                       ))}
